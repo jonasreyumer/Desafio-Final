@@ -1,0 +1,40 @@
+.tittle {
+    text-align: center;
+    font-family:  'Raleway', sans-serif;
+    height: 60px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    animation-name: opacity;
+    animation-duration: 2s;
+}
+@keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+.gradient {
+    background: rgb(180,186,205);
+    background: radial-gradient(circle, rgba(180,186,205,1) 0%, rgba(54,104,115,1) 100%);
+}
+.services {
+    display: flex;
+    justify-content: center;
+}
+.col-sm-4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.services ul {
+    list-style-type: circle;
+}
+.btn {
+    background-color: #054c8a;
+    color: white;
+}
+.btn:hover {
+    background-color: #2d6cb1;
+    color: white;
+}

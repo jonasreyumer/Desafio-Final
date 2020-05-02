@@ -1,0 +1,51 @@
+html {
+    scroll-behavior: smooth;
+  }
+.tittleus {
+    background-image: url("imgs/back2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 670px;
+}
+.container {
+    position: absolute;
+    left: 50%; top:30%;
+    transform: translate(-50%,-30%);
+    text-align: center;
+}
+.btn {
+    border: none;
+    margin: 20px;
+    padding: 24px;
+    width: 400px;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    background-size: 200%;
+    transition: 0.8s;    
+}
+.btn1 {
+    background-image: linear-gradient(to left,#3d80c7,#044277,#3d80c7);
+}
+.btn:hover {
+    background-position: right;
+    color: white;
+}
+.block {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    justify-content: center;
+    background-color: black;
+}
+.block1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    padding: 30px;
+    color: white;
+    width: 500px;
+}
