@@ -33,8 +33,11 @@
 .btn {
     background-color: #054c8a;
     color: white;
-}
-.btn:hover {
+    &:hover {
     background-color: #2d6cb1;
     color: white;
+    }
+}
+.card-text {
+    font-weight: 500;
 }
