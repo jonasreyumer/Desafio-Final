@@ -22,7 +22,6 @@ main {
 .block1 {
     z-index: 3;
     position: relative;
-    height: 90vh;
     width: 45%;
     display: flex;
     flex-direction: column;
@@ -53,6 +52,7 @@ main {
         color: white;
     }
 }
+
 #asoc {
     font-size: 16px;
 }
