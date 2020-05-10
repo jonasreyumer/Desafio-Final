@@ -38,7 +38,7 @@ html {
 .block {
     display: flex;
     flex-direction: row;
-    padding: 30px;
+    padding: 0px 30px 0px 30px;
     justify-content: center;
     background-color: black;
 }
@@ -48,4 +48,18 @@ html {
     padding: 30px;
     color: white;
     width: 500px;
+    .imgblock {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 15px;
+    }
+}
+#imgsvalue {
+    background-color: white;
+    border-radius: 100px;
+    border-color: white;
+    height: 100px;
+    width: 100px;
+    padding-top: 16px;
 }
