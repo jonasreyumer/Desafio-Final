@@ -1,8 +1,8 @@
 .tittle {
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  height: 60px;
-  padding-top: 10px;
+  height: 85px;
+  padding-top: 25px;
   text-transform: uppercase;
   animation-name: opacity;
   animation-duration: 2s; }
@@ -13,27 +13,45 @@
   100% {
     opacity: 1; } }
 
+.row {
+  margin: 0;
+  padding: 0; }
+
 .gradient {
   background: #b4bacd;
   background: radial-gradient(circle, #b4bacd 0%, #366873 100%); }
 
 .services {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  padding: 30px; }
 
 .col-sm-4 {
   padding-top: 10px;
   padding-bottom: 10px; }
+  .col-sm-4 .card-body {
+    height: 550px;
+    font-family: 'Raleway', sans-serif; }
 
 .services ul {
   list-style-type: circle; }
 
 .btn {
   background-color: #054c8a;
-  color: white; }
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  background-size: 200%;
+  transition: 0.8s; }
   .btn:hover {
-    background-color: #2d6cb1;
+    background-position: right;
     color: white; }
+
+.btn1 {
+  background-image: linear-gradient(to left, #3d80c7, #044277, #3d80c7); }
 
 .card-text {
   font-weight: 500; }

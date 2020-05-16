@@ -7,6 +7,11 @@
 .hero {
   position: relative; }
 
+.row {
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+
 .background {
   z-index: 0;
   background-image: url("imgs/back3.jpg");
@@ -22,7 +27,7 @@
   right: 0; }
 
 .block1 {
-  z-index: 3;
+  /*z-index: 3;*/
   position: relative;
   width: 45%;
   display: flex;
@@ -33,7 +38,7 @@
   font-family: 'Raleway', sans-serif;
   height: 670px; }
   .block1 .card {
-    position: absolute; }
+    position: sticky; }
   .block1 h1 {
     margin: 0;
     padding: 0;
@@ -49,7 +54,7 @@
     text-align: justify;
     padding-left: 200px; }
   .block1 .btn {
-    width: 150px; }
+    width: 190px; }
 
 #asoc {
   font-size: 16px; }
@@ -65,7 +70,7 @@
 .block2 {
   margin: 0;
   padding: 0;
-  height: 30vh;
+  height: 150px;
   background-color: #2f2f2f;
   font-family: 'Raleway', sans-serif;
   display: flex;
@@ -92,7 +97,7 @@
   border: none;
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 6px;
   cursor: pointer;
   color: white;
@@ -112,10 +117,10 @@
   #tittle h2 {
     display: inline-block;
     text-align: center;
-    font-size: 18px;
     padding: 7px;
-    width: 200px;
-    margin: 0; }
+    width: 350px;
+    margin: 0;
+    font-family: 'Raleway', sans-serif; }
 
 #block4 {
   position: relative;
@@ -124,3 +129,7 @@
   font-family: 'Raleway', sans-serif;
   text-align: center;
   height: 100px; }
+
+@media (max-width: 600px) and (min-width: 300px) {
+  .block1 {
+    height: 500px; } }
