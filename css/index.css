@@ -33,12 +33,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: 0.8;
   text-align: right;
   font-family: 'Raleway', sans-serif;
   height: 670px; }
   .block1 .card {
-    position: sticky; }
+    position: sticky;
+    background-color: #6c757daa; }
   .block1 h1 {
     margin: 0;
     padding: 0;

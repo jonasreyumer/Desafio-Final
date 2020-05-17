@@ -31,12 +31,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    opacity: 0.8;
+    //   opacity: 0.8;
     text-align: right;
     font-family: 'Raleway', sans-serif;
     height: 670px;
     .card {
         position: sticky;
+        background-color: #6c757daa;
     }
     h1 {
         margin: 0;
