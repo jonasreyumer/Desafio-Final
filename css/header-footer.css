@@ -117,3 +117,34 @@ footer {
   font-size: 10px;
   text-align: center;
   padding-right: 50px; }
+
+#mobile-menu-toggle {
+  display: none; }
+
+@media (max-width: 480px) {
+  .main-container {
+    overflow: hidden; }
+  #mobile-menu-toggle {
+    display: initial;
+    position: relative; }
+    #mobile-menu-toggle ul {
+      transition: opacity .3s ease, transform .3s ease;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      background-color: #2f2f2f;
+      transform: translateX(50vw); }
+    #mobile-menu-toggle:focus ul {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all; }
+      #mobile-menu-toggle:focus ul:focus {
+        pointer-events: all; }
+  #desktop-menu {
+    display: none; }
+  #logo {
+    padding: 1em 0 1em 1em; }
+  .menu {
+    padding: 1em; }
+  .top {
+    height: initial; } }

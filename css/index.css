@@ -133,3 +133,23 @@
 @media (max-width: 600px) and (min-width: 300px) {
   .block1 {
     height: 500px; } }
+
+@media (max-width: 480px) {
+  .block1 {
+    width: 100%;
+    font-size: 2vw; }
+    .block1 h1 {
+      font-size: 4em;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0; }
+    .block1 h5 {
+      font-size: 2.5em;
+      padding: 0; }
+  .block2.row {
+    padding: 1em; }
+    .block2.row h3 {
+      padding: 0;
+      font-size: 2em; }
+  #block4, footer {
+    height: initial; } }
