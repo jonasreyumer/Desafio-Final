@@ -12,83 +12,95 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/header-footer.css" />
 	<link rel="stylesheet" href="css/novedades.css" />
-	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Slab&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" type="image/ico" href="imgs/logo.ico">
 </head>
   
 <body>
-	<div class="top">
-		<div class="toplogo">
-			<div class="logo">
-				<img src="imgs/logo.jpg" alt="logo" id="logo" />
-			</div>
-			<div class="asidelogo">
-				<p id="al1">ESTUDIO CONTABLE</p>
-				<p id="al2">IMPOSITIVO</p>
-			</div>
-		</div>
-		<div class="menu">
-			<ul> 
-				<li><a href="index.html">INICIO</a></li>
-				<li><a href="nosotros.html">NOSOTROS</a></li>
-				<li><a href="servicios.html">SERVICIOS</a></li> 
-				<li><a href="novedades.html">NOVEDADES</a></li>				
-				<li><a href="contacto.html">CONTACTO</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="block1">
-
-		<div class="block">
-			
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<a href="https://www.afip.gob.ar/noticias/20200318-Feria-fiscal.asp">
-							<img class="d-block w-100" src="imgs/afip-2.jpg" alt="First slide" id="first">
-						</a>
-						<div class="carousel-caption d-none d-md-block bg-secondary">
-							<h2>Feria Fiscal</h2>
-							<h5>Se extiende la feria fiscal durante el aislamiento social obligatorio </h5>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<a href="https://www.arba.gov.ar/NoticiasHome/MasInfo_Noticias.asp?idnoticia=2821">
-							<img class="d-block w-100" src="imgs/arba-2.jpg" alt="Second slide" id="second">
-						</a>
-						<div class="carousel-caption d-none d-md-block bg-secondary">
-							<h2>Arba posterga vencimientos de IIBB</h2>
-							<h5>La Agencia de Recaudación de la provincia de Buenos Aires reprogramará para el mes de mayo y junio vencimientos relacionados con el Impuesto sobre los Ingresos Brutos </h5>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<a href="https://www.ambito.com/politica/coronavirus/el-gobierno-publico-las-nuevas-actividades-exceptuadas-la-cuarentena-n5096635">
-							<img class="d-block w-100" src="imgs/ambito.jpg" alt="Third slide">
-						</a>				
-						<div class="carousel-caption d-none d-md-block bg-secondary">
-							<h2>Nuevas actividades exceptuadas de la cuarentena</h2>
-							<h5>Entre ellas se encuentran los servicios de cobranzas, la atención médica y odontológica programada, ópticas, laboratorios de análisis clínicos y procesos industriales específicos.</h5>
-						</div>
-					</div>
+	<div class="container-fluid main-container">
+		<div class="top">
+			<div class="toplogo">
+				<div class="logo">
+					<img src="imgs/logo.jpg" alt="logo" id="logo" />
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Anterior</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Siguiente</span>
-				</a>
+				<div class="asidelogo">
+					<p id="al1">ESTUDIO CONTABLE</p>
+					<p id="al2">IMPOSITIVO</p>
+				</div>
 			</div>
+			<div class="menu">
+				<button id="mobile-menu-toggle" class="btn btn1">
+					<span>Menu</span>
+					<ul> 
+						<li><a href="index.html">INICIO</a></li>
+						<li><a href="nosotros.html">NOSOTROS</a></li>
+						<li><a href="servicios.html">SERVICIOS</a></li> 
+						<li><a href="novedades.html">NOVEDADES</a></li>				
+						<li><a href="contacto.html">CONTACTO</a></li>
+					</ul>
+				</button>
+				<ul id="desktop-menu">
+					<li><a href="index.html">INICIO</a></li>
+					<li><a href="nosotros.html">NOSOTROS</a></li>
+					<li><a href="servicios.html">SERVICIOS</a></li> 
+					<li><a href="novedades.html">NOVEDADES</a></li>				
+					<li><a href="contacto.html">CONTACTO</a></li>
+				</ul>
+			</div>
+		</div>		
+		<div class="block1">
 			
+			<div class="block">
+				
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<a href="https://www.afip.gob.ar/noticias/20200318-Feria-fiscal.asp">
+								<img class="d-block w-100" src="imgs/afip-2.jpg" alt="First slide" id="first">
+							</a>
+							<div class="carousel-caption d-md-block bg-secondary">
+								<h2>Feria Fiscal</h2>
+								<h5>Se extiende la feria fiscal durante el aislamiento social obligatorio </h5>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<a href="https://www.arba.gov.ar/NoticiasHome/MasInfo_Noticias.asp?idnoticia=2821">
+								<img class="d-block w-100" src="imgs/arba-2.jpg" alt="Second slide" id="second">
+							</a>
+							<div class="carousel-caption d-md-block bg-secondary">
+								<h2>Arba posterga vencimientos de IIBB</h2>
+								<h5>La Agencia de Recaudación de la provincia de Buenos Aires reprogramará para el mes de mayo y junio vencimientos relacionados con el Impuesto sobre los Ingresos Brutos </h5>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<a href="https://www.ambito.com/politica/coronavirus/el-gobierno-publico-las-nuevas-actividades-exceptuadas-la-cuarentena-n5096635">
+								<img class="d-block w-100" src="imgs/ambito.jpg" alt="Third slide">
+							</a>				
+							<div class="carousel-caption d-md-block bg-secondary">
+								<h2>Nuevas actividades exceptuadas de la cuarentena</h2>
+								<h5>Entre ellas se encuentran los servicios de cobranzas, la atención médica y odontológica programada, ópticas, laboratorios de análisis clínicos y procesos industriales específicos.</h5>
+							</div>
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Anterior</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Siguiente</span>
+					</a>
+				</div>
+				
+			</div>
 		</div>
-	</div>
-	<footer>
+		</div>
+		<footer>
 			<div class="down">
 				<div class="downlogo">	
 					<img src="imgs/logo.jpg" alt="logo" id="logo2" />
@@ -109,8 +121,8 @@
 				</div>
 			</div>
 			<p id="rights">Estudio Contable Edgardo Rey (todos los derechos reservados)</p>
+			
+		</footer>
+	</body>
 	
-	</footer>
-</body>
-
-</html>
+	</html>

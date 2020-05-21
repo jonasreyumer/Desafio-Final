@@ -1,3 +1,9 @@
+.container-fluid {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
 .tittle {
   text-align: center;
   font-family: 'Raleway', sans-serif;
@@ -28,10 +34,17 @@
 
 .col-sm-4 {
   padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  height: auto; }
   .col-sm-4 .card-body {
     height: 550px;
     font-family: 'Raleway', sans-serif; }
+    .col-sm-4 .card-body li, .col-sm-4 .card-body p {
+      font-family: 'Roboto Slab', serif; }
+    .col-sm-4 .card-body p {
+      font-weight: bold; }
+    .col-sm-4 .card-body h3 {
+      text-transform: uppercase; }
 
 .services ul {
   list-style-type: circle; }
@@ -55,3 +68,35 @@
 
 .card-text {
   font-weight: 500; }
+
+.card {
+  min-height: 620px; }
+
+@media (max-width: 600px) and (min-width: 300px) {
+  .block1 {
+    height: 500px; } }
+
+@media (max-width: 480px) {
+  .card {
+    height: auto; }
+  .services {
+    display: flex;
+    flex-direction: column; }
+  .block1 {
+    width: 100%;
+    font-size: 2vw; }
+    .block1 h1 {
+      font-size: 4em;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0; }
+    .block1 h5 {
+      font-size: 2.5em;
+      padding: 0; }
+  .block2.row {
+    padding: 1em; }
+    .block2.row h3 {
+      padding: 0;
+      font-size: 2em; }
+  footer {
+    height: initial; } }

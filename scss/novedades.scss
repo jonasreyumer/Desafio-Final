@@ -3,6 +3,30 @@ body {
     margin: 0;
     height: 100%;
 }
+.container-fluid {
+    position: relative;
+    height: 100%;
+    margin: 0; padding: 0;
+}
+.btn {
+    background-color: #054c8a;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    background-size: 200%;
+    transition: 0.8s;    
+    &:hover {
+        background-position: right;
+        color: white;
+    }
+}
+.btn1 {
+    background-image: linear-gradient(to left,#3d80c7,#044277,#3d80c7);
+}
 .block1 {
     /* display: flex;
     justify-content: center; */
@@ -15,6 +39,12 @@ body {
 }
 .carousel-caption {
     font-family: 'Raleway', sans-serif; 
+    h5 {
+        font-family: 'Roboto Slab', serif;
+    }
+    h2 {
+        text-transform: uppercase;
+    }
 }
 .block img {
     height: 457px;
@@ -30,3 +60,11 @@ body {
         object-fit: cover;
     }
 }
+@media (max-width: 480px){
+    footer {
+        height: initial;
+    }
+    .block img {
+        height: 530px;
+    }
+ }

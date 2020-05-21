@@ -7,6 +7,9 @@ body {
     padding: 4%;
     height: 400px;
 }
+.top {
+    padding: 0;
+}
 .container-fluid {
     margin: 0;
     padding: 0;
@@ -73,6 +76,24 @@ input {
     background-color: #f8f8f8;
     resize: none;
 }
+.btn3 {
+    background-color: #054c8a;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 6px;
+    width: 100%;
+    padding: 6px 12px 6px 12px;
+    cursor: pointer;
+    color: white;
+    background-size: 200%;
+    transition: 0.8s;    
+    &:hover {
+        background-position: right;
+        color: white;
+    }
+}
 .btn {
     background-color: #054c8a;
     border: none;
@@ -93,3 +114,8 @@ input {
 .btn1 {
     background-image: linear-gradient(to left,#3d80c7,#044277,#3d80c7);
 }
+@media (max-width: 480px){
+    footer {
+        height: initial;
+    }
+ }

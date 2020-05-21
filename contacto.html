@@ -13,7 +13,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/header-footer.css" />
 	<link rel="stylesheet" href="css/contacto.css" />
-	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Slab&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" type="image/ico" href="imgs/logo.ico">
 </head>	
 	
@@ -29,7 +29,17 @@
 			</div>
 		</div>
 		<div class="menu">
-			<ul> 
+			<button id="mobile-menu-toggle" class="btn3 btn1">
+				<span>Menu</span>
+				<ul> 
+					<li><a href="index.html">INICIO</a></li>
+					<li><a href="nosotros.html">NOSOTROS</a></li>
+					<li><a href="servicios.html">SERVICIOS</a></li> 
+					<li><a href="novedades.html">NOVEDADES</a></li>				
+					<li><a href="contacto.html">CONTACTO</a></li>
+				</ul>
+			</button>
+			<ul id="desktop-menu">
 				<li><a href="index.html">INICIO</a></li>
 				<li><a href="nosotros.html">NOSOTROS</a></li>
 				<li><a href="servicios.html">SERVICIOS</a></li> 
@@ -81,7 +91,7 @@
 			</div>
 		</div>
 	<footer>
-		<div class="down">
+		<div class="down row">
 			<div class="downlogo">	
 				<img src="imgs/logo.jpg" alt="logo" id="logo2" />
 				<div class="asidelogo">
