@@ -1,3 +1,5 @@
+@import 'common';
+
 .container-fluid {
     position: relative;
     height: 100%;
@@ -6,11 +8,14 @@
 .tittle {
     text-align: center;
     font-family:  'Raleway', sans-serif;
-    height: 85px;
-    padding-top: 25px;
+    // height: 85px;
+    padding: 25px 0;
     text-transform: uppercase;
     animation-name: opacity;
     animation-duration: 2s;
+    > h2 {
+        margin: 0;
+    }
 }
 @keyframes opacity {
     0% {
@@ -29,26 +34,40 @@
     background: radial-gradient(circle, rgba(180,186,205,1) 0%, rgba(54,104,115,1) 100%);
 }
 .services {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    margin: auto;
     padding: 30px;
+    max-width: 1200px;
 }
-.col-sm-4 {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: auto;
-    .card-body {
-        height: 550px;
-        font-family:  'Raleway', sans-serif;
-        li, p {
-            font-family: 'Roboto Slab', serif;
-        }
-        p {
-            font-weight: bold;
-        }
-        h3 {
-            text-transform: uppercase;
-        }
+    // padding-top: 10px;
+    // padding-bottom: 10px;
+    // height: auto;
+.col-12.col-md-6 {
+    margin-bottom: 30px;
+}
+.card { 
+    height: 100%;
+    margin-bottom: 1em;
+}
+.card-body {
+    // height: 550px;
+    font-family:  'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    > a {
+        width: fit-content;
+    }
+    li, p {
+        font-family: 'Roboto Slab', serif;
+    }
+    p {
+        font-weight: bold;
+    }
+    h3 {
+        text-transform: uppercase;
     }
 }
 .services ul {
@@ -75,9 +94,6 @@
 .card-text {
     font-weight: 500;
 }
-.card {
-    min-height: 620px;
-}
 @media (max-width: 600px) and (min-width: 300px) {
     .block1 {
         height: 500px;
@@ -85,20 +101,16 @@
 
  }
 @media (max-width: 480px){
-    .tittle {
-        padding-top: 0;
-    }
+    // .tittle {
+    //     padding-top: 0;
+    // }
     .card {
-        height: auto;
-        width: 350px;
+        // height: auto;
+        // width: 350px;
     }
     .services {
         display: flex;
         flex-direction: column;
-    }
-    .col-sm-4 {
-        padding-right: 0; padding-left: 0;
-        width: 600px;
     }
     .block1 {
         width: 100%;

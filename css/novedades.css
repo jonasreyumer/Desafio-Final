@@ -1,4 +1,8 @@
 body {
+  max-width: 100vw;
+  overflow: hidden auto; }
+
+body {
   padding: 0;
   margin: 0;
   height: 100%; }

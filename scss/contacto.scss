@@ -1,3 +1,4 @@
+@import 'common';
 body {
     padding: 0;
     margin: 0;
@@ -11,36 +12,45 @@ body {
     padding: 0;
 }
 .container-fluid {
-    margin: 0;
-    padding: 0;
-    padding-right: 200px;
-    padding-left: 300px;
+    // margin: 0;
+    // padding: 0;
+    // padding-right: 200px;
+    // padding-left: 300px;
     position: relative;
-    padding-top: 20px;
-    height: 620px;
+    $padding: 30px;
+    padding-top: $padding;
+    padding-bottom: $padding;
+    // height: 620px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     font-family: 'Raleway', sans-serif;
 }
-.col1 {
-    background: #2f2f2f;
-    padding-left: 4%;
-    width: 30%;
-    height: 550px;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+.info-panel {
+    // padding-left: 4%;
+    // width: 30%;
+    // height: 550px;
     display: inline-block;
+    $borr: 0.5rem;
+    .info {
+        background: #2f2f2f;
+        display: inline-block;
+        padding: 15px 30px;
+        color: white;
+        height: 100%;
+        width: 100%;
+        border-top-left-radius: $borr;
+        border-bottom-left-radius: $borr;
+    }
+    @media (max-width: 768px) {
+        .info {
+            border-radius: $borr;
+            padding: 30px;
+        }
+        margin-bottom: 1em;
+    }
 }
-.info {
-    display: inline-block;
-    color: white;
-}
-.col2{
-    padding-right: 300px;
-    width: 700px;
-    padding-left: 10px;
-    position: relative;
+.contact-form {
 }
 .form-group {
     padding: 5px;
@@ -120,4 +130,5 @@ input {
     }
     .col2{
         padding-right: 0px;
+    }
  }

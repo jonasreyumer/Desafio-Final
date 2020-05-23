@@ -1,4 +1,8 @@
 body {
+  max-width: 100vw;
+  overflow: hidden auto; }
+
+body {
   padding: 0;
   margin: 0;
   height: 100%; }
@@ -78,7 +82,6 @@ footer {
   position: relative;
   background-color: #2f2f2f;
   width: 100%;
-  height: 200px;
   color: white; }
 
 .down {
@@ -132,12 +135,14 @@ footer {
       right: 0;
       background-color: #2f2f2f;
       transform: translateX(50vw); }
-    #mobile-menu-toggle:focus ul {
-      transform: translateX(0);
-      opacity: 1;
-      pointer-events: all; }
-      #mobile-menu-toggle:focus ul:focus {
+    #mobile-menu-toggle:focus {
+      outline: 0; }
+      #mobile-menu-toggle:focus ul {
+        transform: translateX(0);
+        opacity: 1;
         pointer-events: all; }
+        #mobile-menu-toggle:focus ul:focus {
+          pointer-events: all; }
   #desktop-menu {
     display: none; }
   .menu {
