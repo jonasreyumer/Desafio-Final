@@ -1,0 +1,6 @@
+index: que quede en column los clientes
+nosotros: tiene un border el button de menu y la lista, no pude sacarlo
+Servicios: quilombos en todos lados, altura del .tittle y altura de los .cards. (me volvi puto con esto)
+contacto: tiene el mismo border en el button y la lista.
+          tambien queria sacar directamente que desaparezca la columna .col1 cuando se achica la pantalla
+          porque en tamano ipad ponele sale raro y eso tambien me volvi loco

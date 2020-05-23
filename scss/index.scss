@@ -173,4 +173,8 @@
     #block4, footer {
         height: initial;
     }
+    #block4 {
+        display: none;
+        flex-direction: column;
+    }
  }
