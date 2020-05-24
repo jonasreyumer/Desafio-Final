@@ -149,6 +149,8 @@ body {
   .block1 {
     width: 100%;
     font-size: 2vw; }
+    .block1 .card {
+      width: 360px; }
     .block1 h1 {
       font-size: 4em;
       text-align: center;
