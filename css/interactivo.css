@@ -1,0 +1,62 @@
+body {
+  max-width: 100vw;
+  overflow: hidden auto; }
+
+.container-fluid {
+  padding: 0;
+  margin: 0; }
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.btn {
+  background-color: #054c8a;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  background-size: 200%;
+  transition: 0.8s; }
+  .btn:hover {
+    background-position: right;
+    color: white; }
+
+.btn1 {
+  background-image: linear-gradient(to left, #3d80c7, #044277, #3d80c7); }
+
+.breadcrumb {
+  background-color: white; }
+
+.breadcrumb-item::before {
+  content: none !important; }
+
+.breadcrumb-item {
+  padding-left: 0 !important; }
+
+.espacio {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+.indice {
+  width: 2rem;
+  height: 2rem; }
+  .indice small {
+    margin-left: 2rem; }
+
+.fechaIngreso {
+  margin-bottom: 0;
+  margin-left: 4rem; }
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px; }
