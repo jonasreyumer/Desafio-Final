@@ -1,12 +1,52 @@
-let admissionDate = prompt('Fecha de Ingreso');
-let terminationDate = prompt('Fecha de Egreso');
-let usualSalary = parseInt(prompt('Sueldo Habitual'));
-let pendingVacation = prompt('Vacaciones Pendientes');
-let type = prompt('Tipo de Liquidacion')
+// RENUNCIA
+  // ---Devuelve---
+  // Aguinaldo proporcional
+  // Vaciaciones no gozadas
+  // Aguinaldo / Vacaciones
+  // ---Params---
+  // Dias trabajados
+  // Meses trabajados TOTAL
 
-let Info = function(aDate, tDate, uSalary, pVacation) {
-    this.admissionDate = aDate;
-    this.terminationDate = tDate;
-    this.usualSalary = uSalary;
-    this.pendingVacation = pVacation;
-}
+
+  function fnAguinaldoProporcional (salary, semesterWorkingDays) {
+    return salary / 360 * semesterWorkingDays;
+  }
+  
+  function fnVacacionesNoGozadas (salary, vacationDays, yearWorkingDays) {
+    return (salary / 25 * vacationDays) / 360 * yearWorkingDays;
+  }
+
+  function fnIntegracionMesDespido (salary, monthWorkingDays) {
+      return (salary / 30 * (30 - monthWorkingDays));
+  }
+
+
+  function resignationLiquidation (yearWorkingDays, semesterWorkingDays, vacationDays, salari) {
+    const aguinaldoProporcional = fnAguinaldoProporcional(salari, semesterWorkingDays);
+    const vacacionesNoGozadas = fnVacacionesNoGozadas(salari, vacationDays, yearWorkingDays);
+    const aguinaldoOverVacaciones = vacacionesNoGozadas / 12;
+  
+    return {
+      resultAsObj: {
+        aguinaldoProporcional: aguinaldoProporcional,
+        vacacionesNoGozadas: vacacionesNoGozadas,
+        aguinaldoOverVacaciones: aguinaldoOverVacaciones
+      },
+      resultAsArr: [
+        aguinaldoProporcional,
+        vacacionesNoGozadas,
+        aguinaldoOverVacaciones
+      ]
+    }
+  }
+
+  function fireLiquidation (yearWorkingDays, semesterWorkingDays, vacationDays, salari, monthWorkingDays) {
+      const aguinaldoProporcional = fnAguinaldoProporcional(salari, semesterWorkingDays);
+      const vacacionesNoGozadas = fnVacacionesNoGozadas(salari, vacationDays, yearWorkingDays);
+      const aguinaldoOverVacaciones = vacacionesNoGozadas / 12;
+      const integracionMesDespido = fnIntegracionMesDespido(salari, monthWorkingDays);
+      const mesPreaviso = fnMesPreaviso(salari, monthWorkingDays)
+
+
+
+  }
