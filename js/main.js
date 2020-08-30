@@ -6,6 +6,21 @@
   // ---Params---
   // Dias trabajados
   // Meses trabajados TOTAL
+  // function agregartxt1(){                
+  //   let text = document.createTextNode(". Esto es un nuevo parrafo agregado con appendChild()");                                    
+  //   document.getElementById("stepLabel1").appendChild(text); 
+  //   } 
+
+  let formToSend = document.getElementById('form1');
+        formToSend.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let title = event.target.elements.firstD.value
+            console.log(title)
+            function agregartxt1(){
+              document.getElementById("sLabel1").appendChild(title);
+            }  
+        })
+
 
 
   function fnAguinaldoProporcional (salary, semesterWorkingDays) {
