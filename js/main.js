@@ -1,55 +1,5 @@
-// RENUNCIA
-// ---Devuelve---
-// Aguinaldo proporcional
-// Vaciaciones no gozadas
-// Aguinaldo / Vacaciones
-// ---Params---
-// Dias trabajados
-// Meses trabajados TOTAL
-// function agregartxt1(){                
-//   let text = document.createTextNode(". Esto es un nuevo parrafo agregado con appendChild()");                                    
-//   document.getElementById("stepLabel1").appendChild(text); 
-//   } 
+// Poner un validate para que la outDate sea mayor que inDate siempre !!!!
 
-function fnAguinaldoProporcional(salary, semesterWorkingDays) {
-  return salary / 360 * semesterWorkingDays;
-}
-
-function fnVacacionesNoGozadas(salary, vacationDays, yearWorkingDays) {
-  return (salary / 25 * vacationDays) / 360 * yearWorkingDays;
-}
-
-function fnIntegracionMesDespido(salary, monthWorkingDays) {
-  return (salary / 30 * (30 - monthWorkingDays));
-}
-
-
-function resignationLiquidation(yearWorkingDays, semesterWorkingDays, vacationDays, salari) {
-  const aguinaldoProporcional = fnAguinaldoProporcional(salari, semesterWorkingDays);
-  const vacacionesNoGozadas = fnVacacionesNoGozadas(salari, vacationDays, yearWorkingDays);
-  const aguinaldoOverVacaciones = vacacionesNoGozadas / 12;
-
-  return {
-    resultAsObj: {
-      aguinaldoProporcional: aguinaldoProporcional,
-      vacacionesNoGozadas: vacacionesNoGozadas,
-      aguinaldoOverVacaciones: aguinaldoOverVacaciones
-    },
-    resultAsArr: [
-      aguinaldoProporcional,
-      vacacionesNoGozadas,
-      aguinaldoOverVacaciones
-    ]
-  }
-}
-
-function fireLiquidation(yearWorkingDays, semesterWorkingDays, vacationDays, salari, monthWorkingDays) {
-  const aguinaldoProporcional = fnAguinaldoProporcional(salari, semesterWorkingDays);
-  const vacacionesNoGozadas = fnVacacionesNoGozadas(salari, vacationDays, yearWorkingDays);
-  const aguinaldoOverVacaciones = vacacionesNoGozadas / 12;
-  const integracionMesDespido = fnIntegracionMesDespido(salari, monthWorkingDays);
-  const mesPreaviso = fnMesPreaviso(salari, monthWorkingDays)
-}
 
 // ------
 
@@ -86,8 +36,10 @@ function updateInputVisibiliy () {
 }
 
 function onFinalSubmit () {
-  console.log(userInput)
-}
+  // const inDate = moment(userInput[0]');
+  // const outDate = moment('userInput[1]');
+  // return
+};
 
 
 // ------------------------------------------
@@ -99,10 +51,14 @@ const userInput = [
   null, // inDate
   null, // outDate
   null, // salary
-  null, // salary
-  null, // pendingVacations
+  null, // pendingVacation
+  null, // type
 ]
+// CONVENDRIA PUSHEAR PRIMER DIA DEL AñO CORRIENTE Y 30 DE JUNIO DEL AñO CORRIENTE?? ASI TOMO LA INFO DE AHI PARA LAS FUNCIONES
+
 const formToSend = document.getElementById('form-1');
 
 formToSend.addEventListener('submit', onSubmit)
 updateInputVisibiliy()
+
+console.log(userInput[1]);
