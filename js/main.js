@@ -7,7 +7,13 @@ function onSubmit (event) {
   event.preventDefault()
   if (currentStep > totalSteps) return
   // buscar valor
-  const value = document.getElementById('step-' + currentStep + '-input').value
+  const inputElement = document.getElementById('step-' + currentStep + '-input')
+  let value = inputElement.value
+  if (currentStep <= 2) {
+    value = new Date(value)
+  } else if (currentStep === 5) {
+    value = $(inputElement).is(':checked')
+  }
 
   userInput[currentStep - 1] = value
 
@@ -36,9 +42,12 @@ function updateInputVisibiliy () {
 }
 
 function onFinalSubmit () {
-  // const inDate = moment(userInput[0]');
-  // const outDate = moment('userInput[1]');
-  // return
+  console.log(userInput)
+  const result = resignationLiquidationFromRaw(userInput).resultAsArr
+
+  document.getElementById('step-final').classList.remove('d-none')
+  document.getElementById('final-result').innerText = '$' + result.reduce((a, b) => a+b).toFixed(2)
+  document.getElementById('submit-btn').classList.add('d-none')
 };
 
 
