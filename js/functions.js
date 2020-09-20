@@ -1,4 +1,4 @@
-const currentYear = (new Date()).getFullYear()
+const currentYear = (new Date()).getFullYear();
 
 const halfYear = new Date('jun 30')
 halfYear.setYear(currentYear)
@@ -21,6 +21,13 @@ function getDateDifference (date1, date2) {
     days,
     months,
   }
+}
+
+function fnLeftDays (outdate) {
+  const days = (new Date()).getDay(outdate);
+  const diffen = 30 - days;
+  return Math.round(diffen.months);
+  // dias faltantes del mes
 }
 
 function fnWorkingMonths(indate, outdate) {
@@ -79,6 +86,12 @@ function fnAguinaldoProporcional(salary, semesterWorkingDays) {
   return salary / 360 * semesterWorkingDays;
 }
 
+function fnPreAviso() {
+  if (months < 3) return (1 / 2)
+  if (months >= 3 && months < 60) return 1
+  return 2
+}
+
 function resignationLiquidation(yearWorkingDays, semesterWorkingDays, vacationDays, salary) {
   const aguinaldoProporcional = fnAguinaldoProporcional(salary, semesterWorkingDays);
   const vacacionesNoGozadas = fnVacacionesNoGozadas(salary, vacationDays, yearWorkingDays);
@@ -114,14 +127,45 @@ function resignationLiquidationFromRaw(input) {
 
 }
 
+function fireLiquidation(salary, NumberY, NumberA, leftDays, resignation) {
+  const art245 = salary * NumberY;
+  const preAviso = salary * NumberA;
+  const integracion = salary / 30 * leftDays;
+  const liqresignation = resignation;
 
+  return {
+    resultAsObj: {
+      art245 = art245,
+      preAviso = preAviso,
+      integracion = integracion,
+      liqresignation = liqresignation,
+    },
+    resultAsArr: [
+      art245,
+      preAviso,
+      integracion,
+      liqresignation,
+    ]
+  }
+}
+function fireLiquidationFromRaw() {
+  // const userInput = [
+  //   null, // inDate
+  //   null, // outDate
+  //   null, // salary
+  //   null, // pendingVacation
+  //   null, // type
+  
+  const yearWorkingDays = fnyearWorkingDays(input[0], input[1])
+  const semesterWorkingDays = fnsemesterWorking(input[0], input[1])
+  const vacationDays = fnVacationDays(input[0], input[1])
+  const NumberY = fnNumberY(input[0], input[1])
+  const NumberA = fnPreAviso(input[0], input[1])
+  const leftDays = fnLeftDays(input[1])
+  const resignation = resignationLiquidation(yearWorkingDays, semesterWorkingDays, vacationDays, parseInt(input[2]))
 
-// const inDate = userInput[0];
-// const outDate = userInput[1];
-// const salary = userInput[2];
-// const pendingVac = userInput[3];
-// const endingYear = userInput[4];
-// const halfYear = userInput[5];
-// const semesterWorkingDays = fnsemesterWorking(halfYear, 1, inDate, outDate);
-// const yearWorkingDays = fnyearWorkingDays(1, inDate, outDate);
+  return fireLiquidation(parseInt(input[2]), NumberY, NumberA, leftDays, resignation)
+
+}
+
 

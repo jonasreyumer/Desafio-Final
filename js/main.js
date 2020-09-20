@@ -1,5 +1,42 @@
 // Poner un validate para que la outDate sea mayor que inDate siempre !!!!
+// debugger
 
+// $('document').ready(() => {
+
+//   $('#step2').hide();
+//   $('#step1Label').addClass('label-bold');
+
+//   $("form[name='step1']").validate({
+//     rules: {
+//       email: {
+//         required: true,
+//         email: true,
+//       },
+//       password: {
+//         required: true,
+//         minlenght: 5,
+//       }
+//     },
+//     messages: {
+//       email: {
+//         required: 'El campo es obligatorio',
+//         email: 'Ingrese un email valido'
+//       },
+//       password: {
+//         required: 'lalala',
+//         minlenght: 'jejeje',
+//       }
+//     },
+//     submitHandler: (form) => {
+//       $('#step1').slideUp("slow", () => {
+//         $('#step2').slideDown("slow", () => {
+//           $('#step1Label').removeClass('label-bold');
+//           $('#step2Label').addClass('label-bold');
+//         })
+//       });
+//     }
+//   })
+// })
 
 // ------
 
@@ -44,10 +81,21 @@ function updateInputVisibiliy () {
 function onFinalSubmit () {
   console.log(userInput)
   const result = resignationLiquidationFromRaw(userInput).resultAsArr
+  const result2 = fireLiquidationFromRaw(userInput).resultAsArr
 
-  document.getElementById('step-final').classList.remove('d-none')
-  document.getElementById('final-result').innerText = '$' + result.reduce((a, b) => a+b).toFixed(2)
-  document.getElementById('submit-btn').classList.add('d-none')
+  if($('#step-5-input').value = true) {
+    document.getElementById('step-final').classList.remove('d-none')
+    document.getElementById('final-result').innerText = '$' + result.reduce((a, b) => a+b).toFixed(2)
+    document.getElementById('submit-btn').classList.add('d-none')
+
+  }
+  else {
+    document.getElementById('step-final').classList.remove('d-none')
+    document.getElementById('final-result').innerText = '$' + result2.reduce((a, b) => a+b).toFixed(2)
+    document.getElementById('submit-btn').classList.add('d-none')
+  }
+
+  debugger
 };
 
 
@@ -63,7 +111,6 @@ const userInput = [
   null, // pendingVacation
   null, // type
 ]
-// CONVENDRIA PUSHEAR PRIMER DIA DEL AñO CORRIENTE Y 30 DE JUNIO DEL AñO CORRIENTE?? ASI TOMO LA INFO DE AHI PARA LAS FUNCIONES
 
 const formToSend = document.getElementById('form-1');
 
