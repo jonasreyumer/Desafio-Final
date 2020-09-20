@@ -80,22 +80,26 @@ function updateInputVisibiliy () {
 
 function onFinalSubmit () {
   console.log(userInput)
-  const result = resignationLiquidationFromRaw(userInput).resultAsArr
-  const result2 = fireLiquidationFromRaw(userInput).resultAsArr
+  // const result = resignationLiquidationFromRaw(userInput).resultAsArr
+  // const result2 = fireLiquidationFromRaw(userInput).resultAsArr
+  
+  const result = calculateLiquidation(userInput)
+  
+  document.getElementById('step-final').classList.remove('d-none')
+  
+  // document.getElementById('final-result').innerText = '$' + result.reduce((a, b) => a+b).toFixed(2)
 
-  if($('#step-5-input').value = true) {
-    document.getElementById('step-final').classList.remove('d-none')
-    document.getElementById('final-result').innerText = '$' + result.reduce((a, b) => a+b).toFixed(2)
-    document.getElementById('submit-btn').classList.add('d-none')
-
+  const $list = $('.results-list')
+  for (const key in result) {
+    if (key === 'Total') continue
+    $list.append(`<li>${key}: ${result[key]}</li>`)
   }
-  else {
-    document.getElementById('step-final').classList.remove('d-none')
-    document.getElementById('final-result').innerText = '$' + result2.reduce((a, b) => a+b).toFixed(2)
-    document.getElementById('submit-btn').classList.add('d-none')
-  }
+  $('#final-result').text(`Total: ${result['Total']}`)
 
-  debugger
+
+
+  document.getElementById('submit-btn').classList.add('d-none')
+
 };
 
 

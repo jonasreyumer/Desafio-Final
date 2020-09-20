@@ -24,9 +24,14 @@ function getDateDifference (date1, date2) {
 }
 
 function fnLeftDays (outdate) {
-  const days = (new Date()).getDay(outdate);
-  const diffen = 30 - days;
-  return Math.round(diffen.months);
+
+  const date = new Date(outdate)
+  const dateAux = new Date(outdate)
+  dateAux.setMonth(dateAux.getMonth() + 1)
+  dateAux.setDate(0)
+  const maxDays = dateAux.getDate()
+
+  return maxDays - date.getDate();
   // dias faltantes del mes
 }
 
@@ -37,10 +42,9 @@ function fnWorkingMonths(indate, outdate) {
 };
 
 function fnNumberY(indate, outdate) {
-  if ((fnWorkingMonths(indate, outdate)) >= 90) {
-    return 1
-  }
-  // aca necesitaria un for porque deberia ir aumentando
+  const months = fnWorkingMonths(indate, outdate) - 3
+  if (months < 0) return 0
+  return Math.floor(months / 12) + 1
 };
 
 function fnsemesterWorking(indate, outdate) {
@@ -86,7 +90,7 @@ function fnAguinaldoProporcional(salary, semesterWorkingDays) {
   return salary / 360 * semesterWorkingDays;
 }
 
-function fnPreAviso() {
+function fnPreAviso(months) {
   if (months < 3) return (1 / 2)
   if (months >= 3 && months < 60) return 1
   return 2
@@ -97,17 +101,22 @@ function resignationLiquidation(yearWorkingDays, semesterWorkingDays, vacationDa
   const vacacionesNoGozadas = fnVacacionesNoGozadas(salary, vacationDays, yearWorkingDays);
   const aguinaldoOverVacaciones = vacacionesNoGozadas / 12;
 
+  const resultAsArr = [
+    aguinaldoProporcional,
+    vacacionesNoGozadas,
+    aguinaldoOverVacaciones
+  ]
+  const total = resultAsArr.reduce((a, b) => a + b)
+  resultAsArr.push(total)
+ 
   return {
     resultAsObj: {
-      aguinaldoProporcional: aguinaldoProporcional,
-      vacacionesNoGozadas: vacacionesNoGozadas,
-      aguinaldoOverVacaciones: aguinaldoOverVacaciones
+      'Aguinaldo Proporcional': aguinaldoProporcional,
+      'Vacaciones no Gozadas': vacacionesNoGozadas,
+      'Aguinaldo sobre Vacaciones': aguinaldoOverVacaciones,
+      'Total': total
     },
-    resultAsArr: [
-      aguinaldoProporcional,
-      vacacionesNoGozadas,
-      aguinaldoOverVacaciones
-    ]
+    resultAsArr
   }
 }
 
@@ -127,28 +136,30 @@ function resignationLiquidationFromRaw(input) {
 
 }
 
-function fireLiquidation(salary, NumberY, NumberA, leftDays, resignation) {
+function fireLiquidation(salary, NumberY, NumberA, leftDays) {
   const art245 = salary * NumberY;
   const preAviso = salary * NumberA;
   const integracion = salary / 30 * leftDays;
-  const liqresignation = resignation;
+  // const liqresignation = resignation;
 
+  const resultAsArr = [
+    art245,
+    preAviso,
+    integracion,
+  ]
+  const total = resultAsArr.reduce((a, b) => a + b)
+  resultAsArr.push(total)
   return {
     resultAsObj: {
-      art245 = art245,
-      preAviso = preAviso,
-      integracion = integracion,
-      liqresignation = liqresignation,
+      'Indemnización por antigüedad': art245,
+      'Indemnización de Pre-aviso': preAviso,
+      'Integracion mes de despido': integracion,
+      'Total': total
     },
-    resultAsArr: [
-      art245,
-      preAviso,
-      integracion,
-      liqresignation,
-    ]
+    resultAsArr
   }
 }
-function fireLiquidationFromRaw() {
+function fireLiquidationFromRaw(input) {
   // const userInput = [
   //   null, // inDate
   //   null, // outDate
@@ -162,10 +173,17 @@ function fireLiquidationFromRaw() {
   const NumberY = fnNumberY(input[0], input[1])
   const NumberA = fnPreAviso(input[0], input[1])
   const leftDays = fnLeftDays(input[1])
-  const resignation = resignationLiquidation(yearWorkingDays, semesterWorkingDays, vacationDays, parseInt(input[2]))
 
-  return fireLiquidation(parseInt(input[2]), NumberY, NumberA, leftDays, resignation)
+  return fireLiquidation(parseInt(input[2]), NumberY, NumberA, leftDays)
 
 }
 
 
+function calculateLiquidation(input) {
+  const resignationResult = resignationLiquidationFromRaw(userInput).resultAsObj
+  const fireResult = fireLiquidationFromRaw(userInput).resultAsObj
+
+  // if(input[4]) return resignationResult
+  // else return [ ...resignationResult, ...fireResult ]
+  return (input[4] ? resignationResult : { ...resignationResult, ...fireResult, Total: resignationResult.Total + fireResult.Total })
+}
