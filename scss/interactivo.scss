@@ -1,4 +1,6 @@
 @import '_common';
+$font1: 'Raleway', sans-serif;
+$font2: 'Roboto Slab', serif;
 
 .container-fluid {
     padding: 0; margin: 0;
@@ -11,6 +13,8 @@
     margin-left: auto;
 }
 .btn {
+    margin-left: 15px;
+    width: 97px;
     background-color: #054c8a;
     border: none;
     font-family: 'Raleway', sans-serif;
@@ -37,6 +41,7 @@
 }
 .breadcrumb-item {
     padding-left: 0 !important;    
+    font-family: $font1;
 }
 .espacio {
     margin-left: 2rem;
@@ -58,4 +63,47 @@
     flex-wrap: wrap;
     margin-right: -5px;
     margin-left: -5px;
+    margin-top: 20px;
+}
+#form-1 {
+    .col-lg-8 {
+        min-width: 350px;
+    }
+    font-family: $font1;
+    margin: 80px 20px 20px 20px;
+    // min-height: 500px;
+    max-width: 710px;
+    .text-primary {
+        font-weight: bolder;
+    }
+    p {
+        font-size: 25px;
+        font-weight: bolder;
+    }
+    .form-control {
+        width: auto;
+    }
+    .form-group {
+        font-size: 18px;
+        // width: 200px;
+    }
+}
+
+.results-list {
+    font-size: 20px;
+    min-width: 300px;
+    li {
+        list-style: none;
+        font-weight: bolder;
+
+    }
+}
+
+@media (max-width: 480px){
+    .container {
+        font-size: 2vw;
+    }
+    #form-1 {
+        min-height: 500px;
+    }
 }

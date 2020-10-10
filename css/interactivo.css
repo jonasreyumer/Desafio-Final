@@ -14,6 +14,8 @@ body {
   margin-left: auto; }
 
 .btn {
+  margin-left: 15px;
+  width: 97px;
   background-color: #054c8a;
   border: none;
   font-family: 'Raleway', sans-serif;
@@ -38,7 +40,8 @@ body {
   content: none !important; }
 
 .breadcrumb-item {
-  padding-left: 0 !important; }
+  padding-left: 0 !important;
+  font-family: "Raleway", sans-serif; }
 
 .espacio {
   margin-left: 2rem;
@@ -59,4 +62,34 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-right: -5px;
-  margin-left: -5px; }
+  margin-left: -5px;
+  margin-top: 20px; }
+
+#form-1 {
+  font-family: "Raleway", sans-serif;
+  margin: 80px 20px 20px 20px;
+  max-width: 710px; }
+  #form-1 .col-lg-8 {
+    min-width: 350px; }
+  #form-1 .text-primary {
+    font-weight: bolder; }
+  #form-1 p {
+    font-size: 25px;
+    font-weight: bolder; }
+  #form-1 .form-control {
+    width: auto; }
+  #form-1 .form-group {
+    font-size: 18px; }
+
+.results-list {
+  font-size: 20px;
+  min-width: 300px; }
+  .results-list li {
+    list-style: none;
+    font-weight: bolder; }
+
+@media (max-width: 480px) {
+  .container {
+    font-size: 2vw; }
+  #form-1 {
+    min-height: 500px; } }

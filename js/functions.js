@@ -82,12 +82,12 @@ function fnVacationDays(indate, outdate) {
 
 
 function fnVacacionesNoGozadas(salary, vacationDays, yearWorkingDays) {
-  return (salary / 25 * vacationDays) / 360 * yearWorkingDays;
+  return Math.round((salary / 25 * vacationDays) / 360 * yearWorkingDays);
 }
 
 function fnAguinaldoProporcional(salary, semesterWorkingDays) {
   console.log(salary, semesterWorkingDays)
-  return salary / 360 * semesterWorkingDays;
+  return Math.round(salary / 360 * semesterWorkingDays);
 }
 
 function fnPreAviso(months) {
@@ -99,7 +99,7 @@ function fnPreAviso(months) {
 function resignationLiquidation(yearWorkingDays, semesterWorkingDays, vacationDays, salary) {
   const aguinaldoProporcional = fnAguinaldoProporcional(salary, semesterWorkingDays);
   const vacacionesNoGozadas = fnVacacionesNoGozadas(salary, vacationDays, yearWorkingDays);
-  const aguinaldoOverVacaciones = vacacionesNoGozadas / 12;
+  const aguinaldoOverVacaciones = Math.round(vacacionesNoGozadas / 12);
 
   const resultAsArr = [
     aguinaldoProporcional,
@@ -137,9 +137,9 @@ function resignationLiquidationFromRaw(input) {
 }
 
 function fireLiquidation(salary, NumberY, NumberA, leftDays) {
-  const art245 = salary * NumberY;
-  const preAviso = salary * NumberA;
-  const integracion = salary / 30 * leftDays;
+  const art245 = Math.round(salary * NumberY);
+  const preAviso = Math.round(salary * NumberA);
+  const integracion = Math.round(salary / 30 * leftDays);
   // const liqresignation = resignation;
 
   const resultAsArr = [

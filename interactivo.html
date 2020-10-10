@@ -69,7 +69,7 @@
                   </div>
                   <small class="mb-0 ml-2">Fecha de Ingreso</small>
                 </div>
-                <div class="d-flex flex-row justify-content-betwwen border-left border-dark espacio"
+                <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
                   <div class="font-weight-bold mb-0 ml-2 fechaIngreso d-none d-flex" id="step-1-info"></div>
                 </div>
@@ -80,7 +80,7 @@
                   </div>
                   <small class="mb-0 ml-2">Fecha de Egreso</small>
                 </div>
-                <div class="d-flex flex-row justify-content-betwwen border-left border-dark espacio"
+                <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
                   <div class="font-weight-bold mb-0 ml-2 fechaIngreso d-none d-flex" id="step-2-info"></div>
                 </div>
@@ -91,7 +91,7 @@
                   </div>
                   <small class="mb-0 ml-2">Sueldo Habitual</small>
                 </div>
-                <div class="d-flex flex-row justify-content-betwwen border-left border-dark espacio"
+                <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
                   <div class="font-weight-bold mb-0 ml-2 fechaIngreso d-none d-flex" id="step-3-info"></div>
                 </div>
@@ -102,7 +102,7 @@
                   </div>
                   <small class="mb-0 ml-2">Vacaciones Adeudadas</small>
                 </div>
-                <div class="d-flex flex-row justify-content-betwwen border-left border-dark espacio"
+                <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
                   <div class="font-weight-bold mb-0 ml-2 fechaIngreso d-none d-flex" id="step-4-info"></div>
                 </div>
@@ -113,7 +113,7 @@
                   </div>
                   <small class="mb-0 ml-2">Tipo</small>
                 </div>
-                <div class="d-flex flex-row justify-content-betwwen border-left border-dark espacio"
+                <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
                   <div class="font-weight-bold mb-0 ml-2 fechaIngreso d-none d-flex" id="step-5-info"></div>
                 </div>
@@ -124,7 +124,7 @@
                   </div>
                   <small class="mb-0 ml-2">Resultado</small>
                 </div>
-                <div class="d-flex flex-row justify-content-betwwen espacio" style="height:2rem;">
+                <div class="d-flex flex-row justify-content-between espacio" style="height:2rem;">
                   <div class="font-weight-bold mb-0 ml-2 fechaIngreso d-none d-flex" id="step-final-info"></div>
                 </div>
               </li>
@@ -148,7 +148,7 @@
           </div>
           <div class="col-12 col-lg-8" id="step-2">
             <h2 class="text-primary">Cual seria la fecha de egreso?</h2>
-            <p class="mb-2">La fecha debe ser de hoy o posterior</p>
+            <!-- <p class="mb-2">La fecha debe ser de hoy o posterior</p> -->
             <div class="mb-8">
               <div class="form-row">
                 <div class="form-group col-lg-6">
@@ -184,12 +184,22 @@
           </div>
           <div class="col-12 col-lg-8" id="step-5">
             <h2 class="text-primary">Cual es el motivo de la baja?</h2>
+            <p class="mb-2">De ser una liquidacion por renuncia seleccione la opcion siguiente, de lo contrario avanzar</p>
             <div class="mb-8">
               <div class="form-row">
                 <div class="form-group col-lg-6">
-                  <label for="inputFirstDate">Tipo</label>
-                  Es Renuncia?
-                  <input type="checkbox" class="form-control" id="step-5-input">
+                  <!-- <label for="inputFirstDate">Renuncia</label>
+                  <input type="checkbox" class="form-control" id="step-5-input"> -->
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="optradio" id="step-5-input">Renuncia
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="optradio">Despido Sin Causa
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -197,9 +207,9 @@
           <div class="col-12 col-lg-8 d-none" id="step-final">
             <h2 class="text-primary">Resultado</h2>
             <div class="mb-8">
-              <ul class="results-list">
+              <ul class="results-list justify-text">
               </ul>
-              <h4 id="final-result"></h4>
+              <h2 class="text-primary" id="final-result"></h2>
             </div>
           </div>
           <!--  -->

@@ -1,45 +1,3 @@
-// Poner un validate para que la outDate sea mayor que inDate siempre !!!!
-// debugger
-
-// $('document').ready(() => {
-
-//   $('#step2').hide();
-//   $('#step1Label').addClass('label-bold');
-
-//   $("form[name='step1']").validate({
-//     rules: {
-//       email: {
-//         required: true,
-//         email: true,
-//       },
-//       password: {
-//         required: true,
-//         minlenght: 5,
-//       }
-//     },
-//     messages: {
-//       email: {
-//         required: 'El campo es obligatorio',
-//         email: 'Ingrese un email valido'
-//       },
-//       password: {
-//         required: 'lalala',
-//         minlenght: 'jejeje',
-//       }
-//     },
-//     submitHandler: (form) => {
-//       $('#step1').slideUp("slow", () => {
-//         $('#step2').slideDown("slow", () => {
-//           $('#step1Label').removeClass('label-bold');
-//           $('#step2Label').addClass('label-bold');
-//         })
-//       });
-//     }
-//   })
-// })
-
-// ------
-
 function onSubmit (event) {
   event.preventDefault()
   if (currentStep > totalSteps) return
@@ -48,6 +6,17 @@ function onSubmit (event) {
   let value = inputElement.value
   if (currentStep <= 2) {
     value = new Date(value)
+   
+    // let day = value.getDate()
+    // let month = value.getMonth() + 1
+    // let year = value.getFullYear()
+    
+    // if(month < 10){
+    //   return (`${day}-0${month}-${year}`)
+    // }else{
+    //   return (`${day}-${month}-${year}`)
+    // }
+
   } else if (currentStep === 5) {
     value = $(inputElement).is(':checked')
   }
@@ -86,15 +55,16 @@ function onFinalSubmit () {
   const result = calculateLiquidation(userInput)
   
   document.getElementById('step-final').classList.remove('d-none')
+
   
   // document.getElementById('final-result').innerText = '$' + result.reduce((a, b) => a+b).toFixed(2)
 
   const $list = $('.results-list')
   for (const key in result) {
     if (key === 'Total') continue
-    $list.append(`<li>${key}: ${result[key]}</li>`)
+    $list.append(`<li>${key}: $${result[key]}</li>`)
   }
-  $('#final-result').text(`Total: ${result['Total']}`)
+  $('#final-result').text(`Total: $${result['Total']}`)
 
 
 
