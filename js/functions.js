@@ -31,7 +31,7 @@ function fnLeftDays (outdate) {
   dateAux.setDate(0)
   const maxDays = dateAux.getDate()
 
-  return maxDays - date.getDate();
+  return maxDays - parseInt(date.getUTCDate());
   // dias faltantes del mes
 }
 
@@ -50,38 +50,39 @@ function fnNumberY(indate, outdate) {
 function fnsemesterWorking(indate, outdate) {
 
   if ((outdate <= halfYear && indate >= year0) || (outdate > halfYear && indate >= halfYear)) {
-    return getDateDifference(outdate, indate).days;
+    return Math.round(getDateDifference(outdate, indate).days);
   }
   else if (outdate > halfYear && indate < halfYear) {
-    return getDateDifference(outdate, halfYear).days;
+    return Math.round(getDateDifference(outdate, halfYear).days);
   }
   else if (outdate > year0 && indate < year0) {
-    return getDateDifference(outdate, year0).days
+    return Math.round(getDateDifference(outdate, year0).days);
   }
   // diferencia en dias
 }
 
 function fnyearWorkingDays(indate, outdate) {
   if (indate >= year0) {
-    return getDateDifference(outdate, indate).days;
+    return Math.round(getDateDifference(outdate, indate).days);
   }
   else if (indate < year0) {
-    return getDateDifference(outdate, year0).days;
+    return Math.round(getDateDifference(outdate, year0).days);
   }
   // diferencia en dias
 }
 
-function fnVacationDays(indate, outdate) {
+function fnVacationDays(indate, outdate, pendVac) {
   const diff = getDateDifference(outdate, indate)
   const months = diff.months
-  if (months < 60) return 14
-  if (months >= 60 && months < 120) return 21
-  if (months >= 120 && months < 240) return 28
-  return 35
+  if (months < 60) return (14 + pendVac)
+  if (months >= 60 && months < 120) return (21 + pendVac)
+  if (months >= 120 && months < 240) return (28 + pendVac)
+  if (months >= 240) return (35 + pendVac)
 }
 
-
 function fnVacacionesNoGozadas(salary, vacationDays, yearWorkingDays) {
+  console.log(vacationDays)
+  console.log(yearWorkingDays)
   return Math.round((salary / 25 * vacationDays) / 360 * yearWorkingDays);
 }
 
@@ -131,7 +132,7 @@ function resignationLiquidationFromRaw(input) {
 
   const yearWorkingDays = fnyearWorkingDays(input[0], input[1])
   const semesterWorkingDays = fnsemesterWorking(input[0], input[1])
-  const vacationDays = fnVacationDays(input[0], input[1])
+  const vacationDays = fnVacationDays(input[0], input[1], parseInt(input[3]))
   return resignationLiquidation(yearWorkingDays, semesterWorkingDays, vacationDays, parseInt(input[2]))
 
 }
@@ -169,7 +170,7 @@ function fireLiquidationFromRaw(input) {
   
   const yearWorkingDays = fnyearWorkingDays(input[0], input[1])
   const semesterWorkingDays = fnsemesterWorking(input[0], input[1])
-  const vacationDays = fnVacationDays(input[0], input[1])
+  const vacationDays = fnVacationDays(input[0], input[1], parseInt(input[3]))
   const NumberY = fnNumberY(input[0], input[1])
   const NumberA = fnPreAviso(input[0], input[1])
   const leftDays = fnLeftDays(input[1])

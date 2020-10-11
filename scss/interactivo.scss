@@ -91,6 +91,7 @@ $font2: 'Roboto Slab', serif;
 
 .results-list {
     font-size: 20px;
+    line-height: 40px;
     min-width: 300px;
     li {
         list-style: none;
@@ -102,6 +103,9 @@ $font2: 'Roboto Slab', serif;
 @media (max-width: 480px){
     .container {
         font-size: 2vw;
+    }
+    .results-list {
+        font-size: 15px;
     }
     #form-1 {
         min-height: 500px;

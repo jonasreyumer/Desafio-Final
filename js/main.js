@@ -1,3 +1,8 @@
+function DateFormat(date) {
+  let dt = new Date(date);
+  return (`${dt.getUTCDate()}/${dt.getUTCMonth()+1}/${dt.getUTCFullYear()}`)
+}
+
 function onSubmit (event) {
   event.preventDefault()
   if (currentStep > totalSteps) return
@@ -6,37 +11,38 @@ function onSubmit (event) {
   let value = inputElement.value
   if (currentStep <= 2) {
     value = new Date(value)
-   
-    // let day = value.getDate()
-    // let month = value.getMonth() + 1
-    // let year = value.getFullYear()
-    
-    // if(month < 10){
-    //   return (`${day}-0${month}-${year}`)
-    // }else{
-    //   return (`${day}-${month}-${year}`)
-    // }
-
   } else if (currentStep === 5) {
     value = $(inputElement).is(':checked')
   }
 
   userInput[currentStep - 1] = value
-
-
+  
   const element = document.getElementById('step-' + currentStep + '-info')
-  console.log(element)
-  element.innerText = userInput[currentStep - 1]
+  if (currentStep <= 2) {
+    element.innerText = DateFormat(userInput[currentStep - 1])
+  } else if (currentStep === 3) {
+    element.innerText = ('$' + userInput[currentStep - 1])
+  } else if (currentStep === 4){
+    element.innerText = userInput[currentStep - 1]
+  } else if (currentStep === 5) {
+    if ($(inputElement).is(':checked')) {
+      element.innerText = 'Renuncia'
+    } else {
+      element.innerHTML = 'Despido Sin Causa'
+    }
+  }
 
 
   currentStep += 1
-  updateInputVisibiliy()
+  updateInputVisibility()
+  bolderInput()
+  greyCircle()
 
   if (currentStep > totalSteps) onFinalSubmit()
 }
 
 
-function updateInputVisibiliy () {
+function updateInputVisibility () {
   for (let i = 1; i <= totalSteps; i++) {
     let functionName
 
@@ -46,18 +52,36 @@ function updateInputVisibiliy () {
     document.getElementById('step-' + i).classList[functionName]('d-none')
   }
 }
+function bolderInput () {
+  for (let i = 1; i <= totalSteps; i++) {
+    let functionName
+
+    if (i === currentStep) functionName = 'add'
+    else functionName = 'remove'
+
+    document.getElementById('stepSmall' + i).classList[functionName]('font-weight-bold')
+    document.getElementById('stepSmall' + i).classList[functionName]('h5')
+  }
+}
+function greyCircle () {
+  for (let i = 1; i <= totalSteps; i++) {
+    let functionName
+
+    if (i < currentStep) {
+      document.getElementById('stepNumber' + i).classList.remove('btn-primary')
+      document.getElementById('stepNumber' + i).classList.add('btn-secondary') 
+    }
+  }
+}
 
 function onFinalSubmit () {
   console.log(userInput)
-  // const result = resignationLiquidationFromRaw(userInput).resultAsArr
-  // const result2 = fireLiquidationFromRaw(userInput).resultAsArr
   
   const result = calculateLiquidation(userInput)
   
-  document.getElementById('step-final').classList.remove('d-none')
-
-  
-  // document.getElementById('final-result').innerText = '$' + result.reduce((a, b) => a+b).toFixed(2)
+  document.getElementById('step-6').classList.remove('d-none')
+  document.getElementById('stepSmall6').classList.add('font-weight-bold')
+  document.getElementById('stepSmall6').classList.add('h5')
 
   const $list = $('.results-list')
   for (const key in result) {
@@ -65,8 +89,6 @@ function onFinalSubmit () {
     $list.append(`<li>${key}: $${result[key]}</li>`)
   }
   $('#final-result').text(`Total: $${result['Total']}`)
-
-
 
   document.getElementById('submit-btn').classList.add('d-none')
 
@@ -89,6 +111,7 @@ const userInput = [
 const formToSend = document.getElementById('form-1');
 
 formToSend.addEventListener('submit', onSubmit)
-updateInputVisibiliy()
+updateInputVisibility()
+bolderInput()
 
 console.log(userInput[1]);

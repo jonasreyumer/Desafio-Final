@@ -83,6 +83,7 @@ body {
 
 .results-list {
   font-size: 20px;
+  line-height: 40px;
   min-width: 300px; }
   .results-list li {
     list-style: none;
@@ -91,5 +92,7 @@ body {
 @media (max-width: 480px) {
   .container {
     font-size: 2vw; }
+  .results-list {
+    font-size: 15px; }
   #form-1 {
     min-height: 500px; } }

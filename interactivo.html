@@ -44,7 +44,7 @@
             <li><a href="index.html">INICIO</a></li>
             <li><a href="nosotros.html">NOSOTROS</a></li>
             <li><a href="servicios.html">SERVICIOS</a></li>
-            <li><a href="novedades.html">NOVEDADES</a></li>
+            <li><a href="interactivo.html">INTERACTIVO</a></li>
             <li><a href="contacto.html">CONTACTO</a></li>
           </ul>
         </button>
@@ -52,7 +52,7 @@
           <li><a href="index.html">INICIO</a></li>
           <li><a href="nosotros.html">NOSOTROS</a></li>
           <li><a href="servicios.html">SERVICIOS</a></li>
-          <li><a href="novedades.html">NOVEDADES</a></li>
+          <li><a href="interactivo.html">INTERACTIVO</a></li>
           <li><a href="contacto.html">CONTACTO</a></li>
         </ul>
       </div>
@@ -63,11 +63,11 @@
         <div class="col-12 col-md-4 d-none d-lg-flex">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb flex-column">
-              <li class="breadcrumb-item" id="stepLabel1">
+              <li class="breadcrumb-item font-weight-bold" id="stepLabel1">
                 <div class="d-flex flex-row align-items-center">
-                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice">1
+                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice" id="stepNumber1">1
                   </div>
-                  <small class="mb-0 ml-2">Fecha de Ingreso</small>
+                  <small class="mb-0 ml-2" id="stepSmall1">Fecha de Ingreso</small>
                 </div>
                 <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
@@ -76,9 +76,9 @@
               </li>
               <li class="breadcrumb-item" id="stepLabel2">
                 <div class="d-flex flex-row align-items-center">
-                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice">2
+                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice" id="stepNumber2">2
                   </div>
-                  <small class="mb-0 ml-2">Fecha de Egreso</small>
+                  <small class="mb-0 ml-2" id="stepSmall2">Fecha de Egreso</small>
                 </div>
                 <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
@@ -87,9 +87,9 @@
               </li>
               <li class="breadcrumb-item" id="stepLabel3">
                 <div class="d-flex flex-row align-items-center">
-                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice">3
+                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice" id="stepNumber3">3
                   </div>
-                  <small class="mb-0 ml-2">Sueldo Habitual</small>
+                  <small class="mb-0 ml-2" id="stepSmall3">Sueldo Habitual</small>
                 </div>
                 <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
@@ -98,9 +98,9 @@
               </li>
               <li class="breadcrumb-item" id="stepLabel4">
                 <div class="d-flex flex-row align-items-center">
-                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice">4
+                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice" id="stepNumber4">4
                   </div>
-                  <small class="mb-0 ml-2">Vacaciones Adeudadas</small>
+                  <small class="mb-0 ml-2" id="stepSmall4">Vacaciones Adeudadas</small>
                 </div>
                 <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
@@ -109,9 +109,9 @@
               </li>
               <li class="breadcrumb-item" id="stepLabel5">
                 <div class="d-flex flex-row align-items-center">
-                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice">5
+                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice" id="stepNumber5">5
                   </div>
-                  <small class="mb-0 ml-2">Tipo</small>
+                  <small class="mb-0 ml-2" id="stepSmall5">Causa</small>
                 </div>
                 <div class="d-flex flex-row justify-content-between border-left border-dark espacio"
                   style="height:2rem;">
@@ -120,9 +120,9 @@
               </li>
               <li class="breadcrumb-item" id="stepLabel6">
                 <div class="d-flex flex-row align-items-center">
-                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice">6
+                  <div class="d-flex justify-content-center align-items-center rounded-circle btn-primary indice" id="stepNumber6">6
                   </div>
-                  <small class="mb-0 ml-2">Resultado</small>
+                  <small class="mb-0 ml-2" id="stepSmall6">Resultado</small>
                 </div>
                 <div class="d-flex flex-row justify-content-between espacio" style="height:2rem;">
                   <div class="font-weight-bold mb-0 ml-2 fechaIngreso d-none d-flex" id="step-final-info"></div>
@@ -147,7 +147,7 @@
             </div>
           </div>
           <div class="col-12 col-lg-8" id="step-2">
-            <h2 class="text-primary">Cual seria la fecha de egreso?</h2>
+            <h2 class="text-primary">¿Cuál seria la fecha de egreso?</h2>
             <!-- <p class="mb-2">La fecha debe ser de hoy o posterior</p> -->
             <div class="mb-8">
               <div class="form-row">
@@ -159,20 +159,20 @@
             </div>
           </div>
           <div class="col-12 col-lg-8" id="step-3">
-            <h2 class="text-primary">Cual es su sueldo normal y habitual?</h2>
-            <p class="mb-2">Ingresar el monto remunerativo de su ultimo recibo mensual completo (sin descuentos)</p>
+            <h2 class="text-primary">¿Cuál es su sueldo normal y habitual?</h2>
+            <p class="mb-2">Ingresar el monto remunerativo de su último recibo mensual completo (sin descuentos)</p>
             <div class="mb-8">
               <div class="form-row">
                 <div class="form-group col-lg-6">
-                  <label for="inputFirstDate">Sueldo </label>
+                  <label for="inputFirstDate">Sueldo Remunerativo</label>
                   <input type="number" class="form-control" id="step-3-input">
                 </div>
               </div>
             </div>
           </div>
           <div class="col-12 col-lg-8" id="step-4">
-            <h2 class="text-primary">Tiene vacaciones pendientes?</h2>
-            <p class="mb-2">Ingresar dias de vacaciones pendientes de años anteriores</p>
+            <h2 class="text-primary">¿Tiene vacaciones pendientes?</h2>
+            <p class="mb-2">Ingresar días de vacaciones pendientes de años anteriores</p>
             <div class="mb-8">
               <div class="form-row">
                 <div class="form-group col-lg-6">
@@ -183,8 +183,8 @@
             </div>
           </div>
           <div class="col-12 col-lg-8" id="step-5">
-            <h2 class="text-primary">Cual es el motivo de la baja?</h2>
-            <p class="mb-2">De ser una liquidacion por renuncia seleccione la opcion siguiente, de lo contrario avanzar</p>
+            <h2 class="text-primary">¿Cuál es el motivo de la baja?</h2>
+            <p class="mb-2">Seleccione la opción deseada</p>
             <div class="mb-8">
               <div class="form-row">
                 <div class="form-group col-lg-6">
@@ -204,12 +204,12 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-8 d-none" id="step-final">
-            <h2 class="text-primary">Resultado</h2>
+          <div class="col-12 col-lg-12 d-none" id="step-6">
+            <h2 class="text-primary border-top border-bottom text-center">Resultado</h2>
             <div class="mb-8">
               <ul class="results-list justify-text">
               </ul>
-              <h2 class="text-primary" id="final-result"></h2>
+              <h2 class="text-primary border-top border-bottom text-center" id="final-result"></h2>
             </div>
           </div>
           <!--  -->
@@ -234,7 +234,7 @@
             <li>Teléfono: 011- 4641-6979</li>
             <li></li>
             <li>Edgardo Damián Rey</li>
-            <li>Contador Público (ULZ)</li>
+            <li>Contador Público (UNLZ)</li>
           </ul>
         </div>
       </div>
