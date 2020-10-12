@@ -91,11 +91,20 @@ function fnAguinaldoProporcional(salary, semesterWorkingDays) {
   return Math.round(salary / 360 * semesterWorkingDays);
 }
 
-function fnPreAviso(months) {
+function fnPreAviso(indate, outdate) {
+  const diff = getDateDifference(outdate, indate)
+  const months = diff.months
   if (months < 3) return (1 / 2)
   if (months >= 3 && months < 60) return 1
+  console.log(months)
   return 2
 }
+
+// function fnPreAviso(months) {
+//   if (months < 3) return (1 / 2)
+//   if (months >= 3 && months < 60) return 1
+//   return 2
+// }
 
 function resignationLiquidation(yearWorkingDays, semesterWorkingDays, vacationDays, salary) {
   const aguinaldoProporcional = fnAguinaldoProporcional(salary, semesterWorkingDays);
