@@ -4,7 +4,7 @@
   "description": "Estudio Contable Rey",
   "main": "index.js",
   "dependencies": {
-    "moment": "^2.27.0"
+    "moment": "^2.29.2"
   },
   "devDependencies": {
     "node-sass": "^4.14.0",
